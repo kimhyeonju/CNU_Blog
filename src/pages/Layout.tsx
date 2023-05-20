@@ -58,16 +58,18 @@ const Layout = () => {
   return (
     <div>
       <Profile>
-        {/*todo (1) 프로필 꾸미기*/}
         <div>
-          <ProfilePicture src="" alt="프로필 사진" />
+          <ProfilePicture src="https://w.namu.la/s/ec10e4a2e44b420a8db263c0d1c5c2324bfc1870ed56f146f2af9c46a988a0b182a3ec0c823fe7ed5f6349051a7a3a6cb2fd90c41333595a4e471b32307fa3c748ee484ca6fef42bcd6cd4e94ca3d60b8f43aa0faa08d66a5924a17dc30053749253ac2ab58349f8e5f18972e036c4b7" />
         </div>
         <div>
-          <Name>이름</Name>
-          <Description>설명</Description>
+          <Name>수정</Name>
+          <Description>제시붐은 온다</Description>
         </div>
       </Profile>
-      <Nav>{/*todo (2) 메뉴 작성*/}</Nav>
+      <Nav>
+        <NavLink to="/">포스트</NavLink>
+        <NavLink to="/resume">소개</NavLink>
+      </Nav>
       <Outlet />
     </div>
   );
