@@ -7,8 +7,8 @@ import NoPostList from '../components/NoPostList';
 const Home = () => {
   const [postList, setPostList] = useState<IResponsePostList>([]);
   const fetchPostList = async () => {
-    const response = await getPostList();
-    setPostList(response);
+    const { data } = await getPostList();
+    setPostList(data);
   };
 
   useEffect(() => {

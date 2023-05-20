@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { IPostWithAd, IResponsePostList } from './types';
 
 const instance = axios.create({
@@ -8,9 +8,8 @@ const instance = axios.create({
   baseURL: 'http://34.22.77.64:8080',
 });
 
-export const getPostList = async (): Promise<IResponsePostList> => {
-  const { data } = await instance.get('/posts');
-  return data;
+export const getPostList = (): Promise<AxiosResponse<IResponsePostList>> => {
+  return instance.get('/posts');
 };
 
 export const createPost = (title: string, contents: string, tag: string) => {
@@ -21,9 +20,8 @@ export const createPost = (title: string, contents: string, tag: string) => {
   });
 };
 
-export const getPostById = async (id: string): Promise<IPostWithAd> => {
-  const { data } = await instance.get(`/posts/${id}`);
-  return data;
+export const getPostById = (id: string): Promise<AxiosResponse<IPostWithAd>> => {
+  return instance.get(`/posts/${id}`);
 };
 
 export const updatePostById = (id: string, title: string, contents: string, tag: string) => {

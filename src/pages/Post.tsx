@@ -65,7 +65,8 @@ const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
   const [ad, setAd] = useState<IAdvertisement | null>(null);
   const fetchPostById = async () => {
-    const { post, advertisement } = await getPostById(postId);
+    const { data } = await getPostById(postId);
+    const { post, advertisement } = data;
     setPost(post);
     setAd(advertisement);
   };
