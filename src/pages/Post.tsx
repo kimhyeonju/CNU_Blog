@@ -96,7 +96,7 @@ const Post = () => {
         <Title>{post?.title}</Title>
         <Toolbar>
           <Info>
-            <div>n분전</div>
+            <div>n분전~</div>
           </Info>
           <div>
             <Link to="/write" state={{ postId }} style={{ marginRight: 10 }}>
